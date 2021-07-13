@@ -90,3 +90,20 @@ def ssim(y_pred, y_true, data_range=None, window=None, size_average=True):
         return ssim_map.mean()
     else:
         return ssim_map.mean(1).mean(1).mean(1)
+      
+def depth_loss(y_pred, y_true):
+  #Ldepth(y, ŷ)
+  l_depth = l1_criterion(y_pred, y_true)
+  #Lgrad(y, ŷ)
+  dx_true, dy_true = image_gradients(y_true)
+  dx_pred, dy_pred = image_gradients(y_pred)
+  l_edges = torch.mean(torch.abs(dy_pred - dy_true) + torch.abs(dx_pred - dx_true))
+  #LSSIM (y, ŷ)
+  l_ssim = torch.clamp((1 - ssim(y_pred, y_true)) * 0.5, 0, 1)
+
+  #loss 
+  w1 = 0.1
+  w2 = 1.0
+  w3 = 1.0
+  loss= (w1 * l_depth) + (w2 * l_edges) + (w3 * l_ssim)
+  return loss
