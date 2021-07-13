@@ -16,4 +16,4 @@ The [KITTI](http://www.cvlibs.net/datasets/kitti/) is a large dataset that is co
  #### 3.LSSIM (y, ŷ)(Structural similarity index) compute the similarity of two images
   Reference : https://ece.uwaterloo.ca/~z70wang/research/ssim/ 
   
-  #### Algorithm : <img width="1165" alt="Screen Shot 2021-07-13 at 12 58 00 PM" src="https://user-images.githubusercontent.com/73271404/125504126-4bcbc3ae-b7d3-40e1-b987-989124c17683.png">
+  #### [Algorithm](https://en.wikipedia.org/wiki/Structural_similarity#Algorithm) : <img width="1165" alt="Screen Shot 2021-07-13 at 12 58 00 PM" src="https://user-images.githubusercontent.com/73271404/125504126-4bcbc3ae-b7d3-40e1-b987-989124c17683.png">
