@@ -1,11 +1,13 @@
-#Ldepth(y, ŷ)
 import torch
+import torch.nn.functional as func
+from math import exp
+
+#Ldepth(y, ŷ)
 def l1_criterion(y_pred,y_true):
   #compute point-wise L1 loss
   l_depth = torch.mean(torch.abs(y_pred - y_true))
   
 #Lgrad(y, ŷ)
-import torch.nn.functional as func
 def image_gradients(image):
   #compute image gradient loss
   left = image
@@ -23,7 +25,6 @@ def image_gradients(image):
 #LSSIM (y, ŷ)
 #Structural similarity index is a method for predicting similarity of two images
 #An image quality metric that assesses the visual impact of three characteristics of an image: luminance, contrast and structure.
-from math import exp
 def gaussian(window_size, sigma):
   #create gaussian filter 
   gauss = torch.Tensor([exp(-(x - window_size//2)**2/float(2*sigma**2)) for x in range(window_size)])
