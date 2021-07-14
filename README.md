@@ -20,3 +20,20 @@ The [KITTI](http://www.cvlibs.net/datasets/kitti/) is a large dataset that is co
   Reference : https://ece.uwaterloo.ca/~z70wang/research/ssim/ 
   
   #### [Algorithm](https://en.wikipedia.org/wiki/Structural_similarity#Algorithm) : <img width="1165" alt="Screen Shot 2021-07-13 at 12 58 00 PM" src="https://user-images.githubusercontent.com/73271404/125504126-4bcbc3ae-b7d3-40e1-b987-989124c17683.png">
+
+
+## Usage
+The code sample written by myself for peer review:
+`python train.py`
+
+If you want to run the program, just run `python run_MonocularDepth.ipynb` on Colab that can directly download small NYU v2 dataset. 
+
+### Code Structure ###
+`python data.py` reads and pre-processes the NYU v2 dataset.
+`python loss.py` contains loss functions.
+`python model.py` contains an encoder-decoder model for monocular depth estimation.
+`python run_MonocularDepth.ipynb` can be run directly on colab, and it will automatically download the dataset.
+
+
+## Small test dataset
+The small test dataset for NYU-Depth-V2 can be downloaded [here](https://drive.google.com/file/d/1HFAsEQCDUx0UC63Yv5uKE2Z5Z9cKDMV0/view?usp=sharing).
