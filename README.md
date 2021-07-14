@@ -36,10 +36,10 @@ The code sample written by myself for peer review:
 If you want to run the program, just run `python run_MonocularDepth.ipynb` on Colab that can directly download small NYU v2 dataset. 
 
 ### Code Structure ###
-`python data.py` reads and pre-processes the NYU v2 dataset.
-`python loss.py` contains loss functions.
-`python model.py` contains an encoder-decoder model for monocular depth estimation.
-`python run_MonocularDepth.ipynb` can be run directly on colab, and it will automatically download the dataset.
+`python data.py` reads and pre-processes the NYU v2 dataset.  
+`python loss.py` contains loss functions.  
+`python model.py` contains an encoder-decoder model for monocular depth estimation.  
+`python run_MonocularDepth.ipynb` can be run directly on colab, and it will automatically download the dataset.  
 
 
 ## Small test dataset
