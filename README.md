@@ -5,12 +5,8 @@ For this project, we want to construct a deep neural network to predict the dept
 ### 1. NYU Depth v2
 The [NYU Depth dataset v2](https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html) is composed of 464 indoor scenes with the resolution of 640x480 as recorded by both the RGB and Depth cameras 
 from the Microsoft Kinect that can collect ground truth of depth directly. 
-* RGBimage 
+<img width="880" alt="Screen Shot 2021-07-13 at 10 03 12 PM" src="https://user-images.githubusercontent.com/73271404/125554394-94186b71-525c-49c1-b61d-4cb2dac74918.png">
 
-![1](https://user-images.githubusercontent.com/73271404/125553973-7b8be8a8-47ac-47c7-a035-7f7f0c79e735.jpg)
-* Ground Truth 
-
-![1](https://user-images.githubusercontent.com/73271404/125554021-d6c96e05-9235-478f-9bb9-71cde26f4d4d.png)
 
 
 ### 2. KITTI
@@ -18,9 +14,9 @@ The [KITTI](http://www.cvlibs.net/datasets/kitti/) is a large dataset that is co
 
 ## Loss Function
  The total loss Function are the weighted sum of three loss functions:
- #### 1.Ldepth(y, ŷ) compute point-wise L1 loss
- #### 2.Lgrad(y, ŷ) compute image gradient loss
- #### 3.LSSIM (y, ŷ)(Structural similarity index) compute the similarity of two images
+ #### 1. Ldepth(y, ŷ) compute point-wise L1 loss
+ #### 2. Lgrad(y, ŷ) compute image gradient loss
+ #### 3. LSSIM (y, ŷ)(Structural similarity index) compute the similarity of two images
   Reference : https://ece.uwaterloo.ca/~z70wang/research/ssim/ 
   
   #### [Algorithm](https://en.wikipedia.org/wiki/Structural_similarity#Algorithm) : <img width="1165" alt="Screen Shot 2021-07-13 at 12 58 00 PM" src="https://user-images.githubusercontent.com/73271404/125504126-4bcbc3ae-b7d3-40e1-b987-989124c17683.png">
