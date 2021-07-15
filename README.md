@@ -31,7 +31,7 @@ The [KITTI](http://www.cvlibs.net/datasets/kitti/) is a large dataset that is co
 
 ## Usage
 The code sample written by myself for peer review:
-`python train.py`
+`python loss.py`
 
 If you want to run the program, just run `python run_MonocularDepth.ipynb` on Colab that can directly download small NYU v2 dataset. 
 
