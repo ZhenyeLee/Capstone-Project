@@ -1,6 +1,8 @@
 # Capstone-Project
 For this project, we want to construct a deep neural network to predict the depth map from a single RGB image in an end-to-end way.The input of the network is RGB images, and after applying the network the output of this system is the corresponding estimated depth maps. The two datasets we are planning to use for training the model, NYU Depth v2 and KITTI, contain RGB images and corresponding ground truth of depth maps. 
 
+
+
 ## Result
 <img width="925" alt="Screen Shot 2021-07-14 at 9 02 54 AM" src="https://user-images.githubusercontent.com/73271404/125635870-d4626f89-d3fe-4b16-bfac-66017923d908.png">
 
@@ -39,7 +41,7 @@ If you want to run the program, just run `python run_MonocularDepth.ipynb` on Co
 `python data.py` reads and pre-processes the NYU v2 dataset.  
 `python loss.py` contains loss functions.  
 `python model.py` contains an encoder-decoder model for monocular depth estimation.  
-`python run_MonocularDepth.ipynb` can be run directly on colab, and it will automatically download the dataset.  
+`python run_MonocularDepth.ipynb` can be run directly on colab, and it will automatically download the dataset. 
 
 
 ## Small test dataset
