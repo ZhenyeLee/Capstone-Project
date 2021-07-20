@@ -70,7 +70,7 @@ def ssim(y_pred, y_true, data_range=None, window=None, size_average=True):
     #mu_y the average of y
     mu_y = func.conv2d(y_true, window, padding=0, groups=channel)
     #sigma_xy the covariance of x and y
-    Sigma_xy = func.conv2d(y_pred * y_true, window, padding=0, groups=channel) - (mu_x * mu_x) * (Uy * mu_y)
+    Sigma_xy = func.conv2d(y_pred * y_true, window, padding=0, groups=channel) - (mu_x * mu_x) * (mu_y * mu_y)
 
     #K1 = 0.01 and k2 = 0.03 by default
     K1 = 0.01
