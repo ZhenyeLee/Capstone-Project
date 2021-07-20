@@ -6,6 +6,7 @@ from math import exp
 def l1_criterion(y_pred,y_true):
   #compute point-wise L1 loss
   l_depth = torch.mean(torch.abs(y_pred - y_true))
+  return l_depth
   
 #Lgrad(y, ŷ)
 def image_gradients(image):
@@ -32,7 +33,7 @@ def gaussian(window_size, sigma):
   gauss = torch.Tensor([exp(gauss(point)) for point in range(window_size)])
   return gauss / gauss.sum()
 
-def create_window(window_size, channel=1)
+def create_window(window_size, channel=1):
   # Create a Gaussian kernel, obtained by matrix multiplication of two one-dimensional Gaussian distribution vectors
   gaussian_kernel1d = gaussian(window_size, 1.5).unsqueeze(1)
   gaussian_kernel2d = gaussian_kernel1d.mm(gaussian_kernel1d.t()).float().unsqueeze(0).unsqueeze(0)
@@ -51,9 +52,8 @@ def ssim(y_pred, y_true, data_range=None, window=None, size_average=True):
       min_point = -1
     else:
       min_point = 0
-    L = max_point - min_point
-  else:
-    L = data_range
+    data_range = max_point - min_point
+
 
     #get parameter from image
     (_, channel, height, width) = y_pred.size()
@@ -77,8 +77,8 @@ def ssim(y_pred, y_true, data_range=None, window=None, size_average=True):
     K2 = 0.03
     #C1 and C2 two variables to stabilize the division with weak denominator
     ##L is the dynamic range of the pixel-values which either provided by user or calculate from before
-    C1 = (K1 * L) ** 2
-    C2 = (K2 * L) ** 2
+    C1 = (K1 * data_range) ** 2
+    C2 = (K2 * data_range) ** 2
 
     Denominator = (2 * mu_x * mu_y + C1) * (2 * Sigma_xy + C2)
     #sigma_x^2 is the variance of x
