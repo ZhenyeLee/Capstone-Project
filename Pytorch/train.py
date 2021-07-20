@@ -1,12 +1,7 @@
 import time
 import torch
+import torch.nn as nn
 import matplotlib.pyplot as plt
-
-from torch.utils.data import DataLoader
-from data import loadZipFile, NYU_TrainAugmentDataset, NYU_TestDataset
-from loss import depth_loss
-from model import DepthModel
-
 
 def main():
     # send the tensor to GPU if you have a GPU; otherwise, send the tensor to CPU
@@ -15,8 +10,8 @@ def main():
     model = DepthModel().to(device)
     
     # set batch size and the numer of epoches
-    batch_size = 4
-    num_epoch = 3
+    batch_size = 8
+    num_epoch = 5
     
     # Adam optimizer with learning rate of 0.0001
     optimizer = torch.optim.Adam( model.parameters(), lr=0.0001 )
@@ -29,6 +24,9 @@ def main():
     # slice the dataset to mini-batches, each one mini-batch can be sent to a loop.
     train_loader = DataLoader(train_set, batch_size, shuffle=True)
     test_loader = DataLoader(test_set, batch_size, shuffle=False)
+
+    train_avg_losses = []
+    test_avg_losses = []
 
     # Start training...
     for epoch in range(num_epoch):
@@ -57,7 +55,7 @@ def main():
             train_loss += batch_loss.item()
             
             # display information about running speed and batch loss
-            if (i+1) % 10 == 0:
+            if i % 10 == 0:
                 print('Epoch [{}/{}][{}/{}], {:.2f} sec(s), Batch loss:{:.5f} (Avg:{:.5f})'
                   .format(epoch+1, num_epoch, i+1, train_loader.__len__(), (time.time()-epoch_start_time)*10/(i+1), batch_loss, train_loss/(i+1)))
         
@@ -86,15 +84,27 @@ def main():
                     # removes all dimensions with a length of one from tensor, it will return a tensor with the size of (H x W)
                     # transfer from tensor to numpy after removing gradients using torch.detach()
                     # output_depth = torch.squeeze(output_depth[-1]).detach().numpy()
-                    output_depth = torch.squeeze(output_depth[-1]).cpu().numpy()
+                    output_depth = torch.squeeze(output_depth[-1]).cpu().detach().numpy()
                     plt.imshow( output_depth, cmap='plasma' )
                     plt.show()
             
+            # record average batch losses for training and test sets at one epoch
+            train_avg_losses.append(train_loss/train_loader.__len__())
+            test_avg_losses.append(test_loss/test_loader.__len__())
             # display information about running speed of one epoch and batch loss
             print('Epoch [{}/{}], {:.2f} sec(s), Avg Train loss:{:.5f}, Avg Test loss:{:.5f}'
-                  .format(epoch+1, num_epoch, time.time()-epoch_start_time, train_loss/train_set.__len__(), test_loss/test_set.__len__()))
-            
-        
+                  .format(epoch+1, num_epoch, time.time()-epoch_start_time, train_loss/train_loader.__len__(), test_loss/test_loader.__len__()))
+
+
+    # plot average batch losses for training and test sets
+    plt.plot(train_avg_losses, 'o-', label='average train loss')
+    plt.plot(test_avg_losses, 'o-', label='average test loss')
+    plt.legend()
+    plt.title('train/test losses')
+    plt.savefig('losses.png')
+    plt.show()
+    
+
     # save model's parameters
     path = 'nyusmall_para.pt'
     torch.save(model.state_dict(), path)
