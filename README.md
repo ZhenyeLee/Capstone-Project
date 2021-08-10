@@ -5,7 +5,7 @@
 ## Result
 <h3 align="center"> Demo for indoor scene in Engineering Hall, UW Madison</h3>
 <p align="center">
-<img src="https://user-images.githubusercontent.com/73271404/128800359-ddf6a52e-6075-4bae-9edb-e2d47b60dd74.gif" width="440"/><img src="https://user-images.githubusercontent.com/73271404/128800367-8877c642-a4e7-4abf-92ca-cf40a32c5fd5.gif" width="440"/>
+<img src="https://user-images.githubusercontent.com/73271404/128800359-ddf6a52e-6075-4bae-9edb-e2d47b60dd74.gif" width="400"/><img src="https://user-images.githubusercontent.com/73271404/128800367-8877c642-a4e7-4abf-92ca-cf40a32c5fd5.gif" width="400"/>
  </p>
  
  <h3 align="center"> Demo for outdoor scene at State Street, Madison</h3>
