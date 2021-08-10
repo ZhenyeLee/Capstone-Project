@@ -15,7 +15,7 @@
  </p>
 
 
-## Data
+## DataSet
 ### 1. NYU Depth v2
 The [NYU Depth dataset v2](https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html) is composed of 464 indoor scenes with the resolution of 640x480 as recorded by both the RGB and Depth cameras 
 from the Microsoft Kinect that can collect ground truth of depth directly. 
