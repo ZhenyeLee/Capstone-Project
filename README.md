@@ -1,19 +1,24 @@
-# Capstone-Project
-For this project, we want to construct a deep neural network to predict the depth map from a single RGB image in an end-to-end way.The input of the network is RGB images, and after applying the network the output of this system is the corresponding estimated depth maps. The two datasets we are planning to use for training the model, NYU Depth v2 and KITTI, contain RGB images and corresponding ground truth of depth maps. 
+<h1 align="center">Monocular Depth Estimation Using a Deep Network</h1>
+
+### For this project, we constructed a deep neural network to predict the depth map from a single RGB image in an end-to-end way.The input of the network is RGB images, and after applying the network the output of this system is the corresponding estimated depth maps. The two datasets we are planning to use for training the model, NYU Depth v2 and KITTI, contain RGB images and corresponding ground truth of depth maps. 
 
 ## Result
-<img width="925" alt="Screen Shot 2021-07-14 at 9 02 54 AM" src="https://user-images.githubusercontent.com/73271404/125635870-d4626f89-d3fe-4b16-bfac-66017923d908.png">
-
-
-
+<h3 align="center"> Demo for indoor scene in Engineering Hall, UW Madison</h3>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/73271404/128800359-ddf6a52e-6075-4bae-9edb-e2d47b60dd74.gif" width="440"/><img src="https://user-images.githubusercontent.com/73271404/128800367-8877c642-a4e7-4abf-92ca-cf40a32c5fd5.gif" width="440"/>
+ </p>
+ 
+ <h3 align="center"> Demo for outdoor scene at State Street, Madison</h3>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/73271404/128801153-f608a47d-9adf-4cd3-939c-5baa7ed98c2e.gif"/>
+ <img src="https://user-images.githubusercontent.com/73271404/128801156-e4efe4ca-a0e0-4a48-a8ee-4aa7f08a972f.gif"/>
+ </p>
 
 
 ## Data
 ### 1. NYU Depth v2
 The [NYU Depth dataset v2](https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html) is composed of 464 indoor scenes with the resolution of 640x480 as recorded by both the RGB and Depth cameras 
 from the Microsoft Kinect that can collect ground truth of depth directly. 
-<img width="880" alt="Screen Shot 2021-07-13 at 10 03 12 PM" src="https://user-images.githubusercontent.com/73271404/125554394-94186b71-525c-49c1-b61d-4cb2dac74918.png">
-
 
 
 ### 2. KITTI
@@ -36,10 +41,10 @@ The code sample written by myself for peer review:
 If you want to run the program, just run `python run_MonocularDepth.ipynb` on Colab that can directly download small NYU v2 dataset. 
 
 ### Code Structure ###
-`python data.py` reads and pre-processes the NYU v2 dataset.  
-`python loss.py` contains loss functions.  
-`python model.py` contains an encoder-decoder model for monocular depth estimation.  
-`python run_MonocularDepth.ipynb` can be run directly on colab, and it will automatically download the dataset.  
+`NYU/Initial_Model data.py` reads and pre-processes the NYU v2 dataset.  
+`NYU/Initial_Model loss.py` contains loss functions.  
+`NYU/Initial_Model model.py` contains an encoder-decoder model for monocular depth estimation.  
+`NYU/Initial_Model run_MonocularDepth.ipynb` can be run directly on colab, and it will automatically download the dataset.  
 
 
 ## Small test dataset
