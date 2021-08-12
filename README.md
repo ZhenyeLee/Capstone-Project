@@ -15,25 +15,6 @@
  </p>
 
 
-## DataSet
-### 1. NYU Depth v2
-The [NYU Depth dataset v2](https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html) is composed of 464 indoor scenes with the resolution of 640x480 as recorded by both the RGB and Depth cameras 
-from the Microsoft Kinect that can collect ground truth of depth directly. 
-
-
-### 2. KITTI
-The [KITTI](http://www.cvlibs.net/datasets/kitti/) is a large dataset that is composed of 56 outdoor scenes including the "city", "residential" categories of the raw data, and so on. 
-
-## Loss Function
- The total loss Function are the weighted sum of three loss functions:
- #### 1. Ldepth(y, ŷ) compute point-wise L1 loss
- #### 2. Lgrad(y, ŷ) compute image gradient loss
- #### 3. LSSIM (y, ŷ)(Structural similarity index) compute the similarity of two images
-  Reference : https://ece.uwaterloo.ca/~z70wang/research/ssim/ 
-  
-  #### [Algorithm](https://en.wikipedia.org/wiki/Structural_similarity#Algorithm) : <img width="1165" alt="Screen Shot 2021-07-13 at 12 58 00 PM" src="https://user-images.githubusercontent.com/73271404/125504126-4bcbc3ae-b7d3-40e1-b987-989124c17683.png">
-
-
 ## Usage
 If you want to run the whole program, just run one of `.ipynb` files on Colab that can directly download the entire NYU depth v2 dataset or the KITTI dataset. 
 
@@ -54,8 +35,26 @@ If you want to run the whole program, just run one of `.ipynb` files on Colab th
 `KITTI/kitti_equalloss_MonocularDepth.ipynb` can be run directly on colab, and it will automatically download the KITTI dataset. This is the original encoder-decoder architecture with the equal-weighted loss function. In this `.ipynb` file, the modular of data reading is rewritten for the KITTI dataset.
 
 
-## Small test dataset
+## Dataset
+### 1. NYU Depth v2
+The [NYU Depth dataset v2](https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html) is composed of 464 indoor scenes with the resolution of 640x480 as recorded by both the RGB and Depth cameras 
+from the Microsoft Kinect that can collect ground truth of depth directly. 
+
+### 2. KITTI
+The [KITTI](http://www.cvlibs.net/datasets/kitti/) is a large dataset that is composed of 56 outdoor scenes including the "city", "residential" categories of the raw data, and so on. 
+
+### Small test dataset
 The small test dataset for NYU-depth-v2 can be downloaded [here](https://drive.google.com/file/d/1HFAsEQCDUx0UC63Yv5uKE2Z5Z9cKDMV0/view?usp=sharing).
+
+
+## Loss Function
+ The total loss Function are the weighted sum of three loss functions:
+ #### 1. Ldepth(y, ŷ) compute point-wise L1 loss
+ #### 2. Lgrad(y, ŷ) compute image gradient loss
+ #### 3. LSSIM (y, ŷ)(Structural similarity index) compute the similarity of two images
+  Reference : https://ece.uwaterloo.ca/~z70wang/research/ssim/ 
+  
+  #### [Algorithm](https://en.wikipedia.org/wiki/Structural_similarity#Algorithm) : <img width="1165" alt="Screen Shot 2021-07-13 at 12 58 00 PM" src="https://user-images.githubusercontent.com/73271404/125504126-4bcbc3ae-b7d3-40e1-b987-989124c17683.png">
 
 
 ## Reference
