@@ -35,7 +35,7 @@ The [KITTI](http://www.cvlibs.net/datasets/kitti/) is a large dataset that is co
 
 
 ## Usage
-If you want to run the program, just run `python run_MonocularDepth.ipynb` on Colab that can directly download small NYU v2 dataset. 
+If you want to run the whole program, just run one of `.ipynb` files on Colab that can directly download the entire NYU depth v2 dataset or the KITTI dataset. 
 
 ### Code Structure ###
 #### NYU depth v2 Dataset ####
