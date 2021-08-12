@@ -1,6 +1,6 @@
 <h1 align="center">Monocular Depth Estimation Using a Deep Network</h1>
 
-<p>For this project, we constructed a deep neural network to predict the depth map from a single RGB image in an end-to-end way.The input of the network is RGB images, and after applying the network the output of this system is the corresponding estimated depth maps. The two datasets we are planning to use for training the model, NYU Depth v2 and KITTI, contain RGB images and corresponding ground truth of depth maps. </p>
+<p>For this project, we constructed a deep neural network to predict the depth map from a single RGB image in an end-to-end way. The input of the network is RGB images, and after applying the network the output of this system is the corresponding estimated depth maps. The two datasets we are planning to use for training the model, NYU Depth v2 and KITTI, contain RGB images and corresponding ground truth of depth maps. </p>
 
 ## Result
 <h3 align="center"> Demo for indoor scene in Engineering Hall, UW Madison</h3>
@@ -35,9 +35,6 @@ The [KITTI](http://www.cvlibs.net/datasets/kitti/) is a large dataset that is co
 
 
 ## Usage
-The code sample written by myself for peer review:
-`python loss.py`
-
 If you want to run the program, just run `python run_MonocularDepth.ipynb` on Colab that can directly download small NYU v2 dataset. 
 
 ### Code Structure ###
