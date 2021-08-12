@@ -1,6 +1,6 @@
 <h1 align="center">Monocular Depth Estimation Using a Deep Network</h1>
 
-<p>For this project, we constructed a deep neural network to predict the depth map from a single RGB image in an end-to-end way. The input of the network is RGB images, and after applying the network the output of this system is the corresponding estimated depth maps. The two datasets we are planning to use for training the model, NYU Depth v2 and KITTI, contain RGB images and corresponding ground truth of depth maps. </p>
+<p>In this project, we learn an encoder-decoder with skip-connections proposed by Ibraheem Alhashim[1], and construct improved deep neural networks to predict the depth map from a single RGB image in an end-to-end way. The input of the network is RGB images, and after applying the network the output of this system is the corresponding estimated depth maps. The two datasets we use for training the model, NYU depth v2 and KITTI, contain RGB images and corresponding ground truth of depth maps. </p>
 
 ## Result
 <h3 align="center"> Demo for indoor scene in Engineering Hall, UW Madison</h3>
@@ -43,8 +43,8 @@ If you want to run the whole program, just run one of `.ipynb` files on Colab th
 `NYU/Initial_Model/ data.py` reads and pre-processes the NYU v2 dataset.  
 `NYU/Initial_Model/ loss.py` contains loss functions.  
 `NYU/Initial_Model/ model.py` contains an encoder-decoder model for monocular depth estimation. This part is from model.py that can be download from https://github.com/ialhashim/DenseDepth/tree/master/PyTorch.  
-  
-  
+    
+    
 `NYU/NYU_Standard_MonocularDepth.ipynb` can be run directly on colab, and it will automatically download the entire NYU depth v2 dataset. The original encoder-decoder architecture is used in this `.ipynb` file.  
 `NYU/NYU_addbatch_MonocularDepth.ipynb` This is the modified encoder-decoder architecture adding BatchNormalization layer.  
 `NYU/NYU_addup_MonocularDepth.ipynb` This is the modified encoder-decoder architecture adding one more 2x upsampling layer.  
@@ -55,4 +55,8 @@ If you want to run the whole program, just run one of `.ipynb` files on Colab th
 
 
 ## Small test dataset
-The small test dataset for NYU-Depth-V2 can be downloaded [here](https://drive.google.com/file/d/1HFAsEQCDUx0UC63Yv5uKE2Z5Z9cKDMV0/view?usp=sharing).
+The small test dataset for NYU-depth-v2 can be downloaded [here](https://drive.google.com/file/d/1HFAsEQCDUx0UC63Yv5uKE2Z5Z9cKDMV0/view?usp=sharing).
+
+
+## Reference
+[1] I. Alhashim and P. Wonka, “High quality monocular depth estimation via transfer learning,” arXiv:1812.11941, 2018.
