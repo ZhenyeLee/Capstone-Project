@@ -45,9 +45,9 @@ If you want to run the program, just run `python run_MonocularDepth.ipynb` on Co
 `NYU/Initial_Model/ model.py` contains an encoder-decoder model for monocular depth estimation.  
 
 `NYU/NYU_Standard_MonocularDepth.ipynb` can be run directly on colab, and it will automatically download the entire NYU depth v2 dataset. The original encoder-decoder architecture with the equal-weighted loss function is used in this `.ipynb` file.  
-`NYU/NYU_addbatch_MonocularDepth.ipynb` can be run directly on colab. This is the modified encoder-decoder architecture adding BatchNormalization layer.  
-`NYU/NYU_addup_MonocularDepth.ipynb` can be run directly on colab. This is the modified encoder-decoder architecture adding one more 2x upsampling layer.  
-`NYU/NYU_simpledecoder_MonocularDepth.ipynb` can be run directly on colab. This is the modified encoder-decoder architecture without skip-connections.  
+`NYU/NYU_addbatch_MonocularDepth.ipynb` This is the modified encoder-decoder architecture adding BatchNormalization layer.  
+`NYU/NYU_addup_MonocularDepth.ipynb` This is the modified encoder-decoder architecture adding one more 2x upsampling layer.  
+`NYU/NYU_simpledecoder_MonocularDepth.ipynb` This is the modified encoder-decoder architecture without skip-connections.  
 
 #### KITTI Dataset ####
 `KITTI/kitti_equalloss_MonocularDepth.ipynb` can be run directly on colab, and it will automatically download the KITTI dataset. This is the original encoder-decoder architecture with the equal-weighted loss function.  
